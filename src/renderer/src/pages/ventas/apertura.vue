@@ -18,11 +18,13 @@ import TableMonedas from '@/views/pages/tables/TableMonedas.vue'
             </VBtn>
           </div>
         </VCard>
-
       </VCol>
+
       <VCol cols="12" md="6">
         <VCard title="Billetes" class="text-uppercase">
-          <TableBilletes />
+          <VCardText>
+            <TableBilletes />
+          </VCardText>
         </VCard>
       </VCol>
       <VCol cols="12" md="6">

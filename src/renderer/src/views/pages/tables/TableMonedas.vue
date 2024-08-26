@@ -76,19 +76,4 @@ const totalAmount = computed(() =>
   justify-content: center;
   align-items: center;
 }
-
-.v-input {
-  display: flex;
-  justify-content: center;
-}
-
-.v-input__control {
-  width: 85px;
-}
-
-.v-field__input {
-  padding: 4px 12px;
-  text-align: end;
-  width: 2%;
-}
 </style>

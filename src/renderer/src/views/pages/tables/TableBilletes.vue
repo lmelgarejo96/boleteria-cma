@@ -34,7 +34,6 @@ const totalAmount = computed(() =>
       <tr v-for="(bill, index) in bills" :key="index">
         <td>
           <img :src="`@images/billetes/${bill.value}.png`" :alt="`imagen referencial de billete de ${bill.value}`">
-          {{console.table(bill.value)}}
         </td>
         <td class="text-center">
           <VTextField
@@ -74,20 +73,5 @@ const totalAmount = computed(() =>
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.v-input {
-  display: flex;
-  justify-content: center;
-}
-
-.v-input__control {
-  width: 85px;
-}
-
-.v-field__input {
-  padding: 4px 12px;
-  text-align: end;
-  width: 2%;
 }
 </style>

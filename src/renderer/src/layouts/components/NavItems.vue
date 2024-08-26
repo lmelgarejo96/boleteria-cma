@@ -16,7 +16,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
       title: 'Analytics',
       to: '/dashboard',
     }" />
-    <VerticalNavLink :item="{
+    <!-- <VerticalNavLink :item="{
       title: 'CRM',
       href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/dashboards/crm',
       target: '_blank',
@@ -43,11 +43,11 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
       target: '_blank',
       badgeContent: 'Pro',
       badgeClass: 'bg-light-primary text-primary',
-    }" />
+    }" /> -->
   </VerticalNavGroup>
 
   <!-- 👉 Front Pages -->
-  <VerticalNavGroup :item="{
+  <!-- <VerticalNavGroup :item="{
     title: 'Front Pages',
     icon: 'ri-file-copy-line',
     badgeContent: 'Pro',
@@ -78,7 +78,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
       href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/front-pages/help-center',
       target: '_blank',
     }" />
-  </VerticalNavGroup>
+  </VerticalNavGroup> -->
 
   <!-- VENTAS-->
   <VerticalNavSectionTitle :item="{
@@ -100,7 +100,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     to: '/ventas/vender',
   }" />
   <!-- ADMINISTRACIÓN-->
-  <VerticalNavSectionTitle :item="{
+  <!-- <VerticalNavSectionTitle :item="{
     heading: 'Administración',
   }" />
   <VerticalNavLink :item="{
@@ -112,9 +112,9 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     title: 'Boleterias',
     icon: 'ri-coupon-2-line',
     to: '/administracion/boleterias',
-  }" />
+  }" /> -->
   <!-- TAREAS-->
-  <VerticalNavSectionTitle :item="{
+  <!-- <VerticalNavSectionTitle :item="{
     heading: 'Tareas',
   }" />
   <VerticalNavLink :item="{
@@ -136,24 +136,24 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     title: 'Asignar módulo',
     icon: 'ri-group-line',
     to: '/tareas/asignar-modulo',
-  }" />
+  }" /> -->
   <!-- REPORTES-->
-  <VerticalNavSectionTitle :item="{
+  <!-- <VerticalNavSectionTitle :item="{
     heading: 'Reportes',
-  }" />
+  }" /> -->
   <!-- FACTURACIÓN ELECTRÓNICA-->
-  <VerticalNavSectionTitle :item="{
+  <!-- <VerticalNavSectionTitle :item="{
     heading: 'Facturación Electrónica',
-  }" />
+  }" /> -->
   <!-- CONTABILIDAD-->
-  <VerticalNavSectionTitle :item="{
+  <!-- <VerticalNavSectionTitle :item="{
     heading: 'Reportes',
-  }" />
+  }" /> -->
   <!-- APPS Y PAGES-->
   <VerticalNavSectionTitle :item="{
     heading: 'Apps & Pages',
   }" />
-  <VerticalNavLink :item="{
+  <!-- <VerticalNavLink :item="{
     title: 'Email',
     icon: 'ri-mail-line',
     href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/apps/email',
@@ -184,7 +184,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     target: '_blank',
     badgeContent: 'Pro',
     badgeClass: 'bg-light-primary text-primary',
-  }" />
+  }" /> -->
 
   <VerticalNavLink :item="{
     title: 'Account Settings',
@@ -237,7 +237,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     icon: 'ri-layout-4-line',
     to: '/form-layouts',
   }" />
-  <VerticalNavLink :item="{
+  <!-- <VerticalNavLink :item="{
     title: 'Form Validation',
     icon: 'ri-checkbox-multiple-line',
     href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/forms/form-validation',
@@ -252,7 +252,7 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
     target: '_blank',
     badgeContent: 'Pro',
     badgeClass: 'bg-light-primary text-primary',
-  }" />
+  }" /> -->
   <VerticalNavLink :item="{
     title: 'Tables',
     icon: 'ri-table-alt-line',
@@ -263,14 +263,14 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   <VerticalNavSectionTitle :item="{
     heading: 'Others',
   }" />
-  <VerticalNavLink :item="{
+  <!-- <VerticalNavLink :item="{
     title: 'Access Control',
     icon: 'ri-shield-line',
     href: 'https://demos.themeselection.com/materio-vuetify-vuejs-admin-template/demo-1/access-control',
     target: '_blank',
     badgeContent: 'Pro',
     badgeClass: 'bg-light-primary text-primary',
-  }" />
+  }" /> -->
   <VerticalNavLink :item="{
     title: 'Documentation',
     icon: 'ri-article-line',
