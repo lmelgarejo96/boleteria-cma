@@ -2,7 +2,7 @@
 import { useTheme } from 'vuetify'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
 
-import logo from '@images/logo.svg?raw'
+import logo from '@images/logo-b.svg?raw'
 import authV1MaskDark from '@images/pages/auth-v1-mask-dark.png'
 import authV1MaskLight from '@images/pages/auth-v1-mask-light.png'
 import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
@@ -28,7 +28,7 @@ const isPasswordVisible = ref(false)
 <template>
   <!-- eslint-disable vue/no-v-html -->
 
-  <div class="auth-wrapper d-flex align-center justify-center pa-4">
+  <section class="auth-wrapper d-flex align-center justify-center pa-4">
     <VCard
       class="auth-card pa-4 pt-7"
       max-width="448"
@@ -40,21 +40,21 @@ const isPasswordVisible = ref(false)
         >
           <!-- eslint-disable vue/no-v-html -->
           <div
-            class="d-flex"
+            class="d-flex w-80"
             v-html="logo"
           />
-          <h2 class="font-weight-medium text-2xl text-uppercase">
-            Materio
-          </h2>
         </RouterLink>
       </VCardItem>
 
       <VCardText class="pt-2">
-        <h4 class="text-h4 mb-1">
-          Welcome to Materio! 👋🏻
+        <h4 class="text-h4 mb-1 text-center">
+          Sistema de Boleteria
         </h4>
-        <p class="mb-0">
-          Please sign-in to your account and start the adventure
+        <p class="mb-0 text-center">
+          Boleteria no registrada
+        </p>
+        <p class="mb-0 text-center">
+          IP: <span>168.192.64.3</span>
         </p>
       </VCardText>
 
@@ -65,7 +65,7 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <VTextField
                 v-model="form.email"
-                label="Email"
+                label="Correo electronico"
                 type="email"
               />
             </VCol>
@@ -74,15 +74,16 @@ const isPasswordVisible = ref(false)
             <VCol cols="12">
               <VTextField
                 v-model="form.password"
-                label="Password"
+                label="Contraseña"
                 placeholder="············"
                 :type="isPasswordVisible ? 'text' : 'password'"
                 :append-inner-icon="isPasswordVisible ? 'ri-eye-off-line' : 'ri-eye-line'"
                 @click:append-inner="isPasswordVisible = !isPasswordVisible"
               />
+            </VCol>
 
               <!-- remember me checkbox -->
-              <div class="d-flex align-center justify-space-between flex-wrap my-6">
+              <!-- <div class="d-flex align-center justify-space-between flex-wrap my-6">
                 <VCheckbox
                   v-model="form.remember"
                   label="Remember me"
@@ -94,20 +95,21 @@ const isPasswordVisible = ref(false)
                 >
                   Forgot Password?
                 </a>
-              </div>
-
+              </div> -->
+              <VCol cols="12">
               <!-- login button -->
               <VBtn
+                class="text-uppercase btnLogin"
                 block
                 type="submit"
                 to="/"
               >
-                Login
+                continuar
               </VBtn>
             </VCol>
 
             <!-- create account -->
-            <VCol
+            <!-- <VCol
               cols="12"
               class="text-center text-base"
             >
@@ -127,15 +129,15 @@ const isPasswordVisible = ref(false)
               <VDivider />
               <span class="mx-4">or</span>
               <VDivider />
-            </VCol>
+            </VCol> -->
 
             <!-- auth providers -->
-            <VCol
+            <!-- <VCol
               cols="12"
               class="text-center"
             >
               <AuthProvider />
-            </VCol>
+            </VCol> -->
           </VRow>
         </VForm>
       </VCardText>
@@ -158,9 +160,16 @@ const isPasswordVisible = ref(false)
       class="auth-footer-mask d-none d-md-block"
       :src="authThemeMask"
     />
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
 @use "@core/scss/template/pages/page-auth";
+.w-80{
+  width: 150px;
+  justify-content: center;
+}
+.btnLogin{
+ background: #2e3e53 !important;
+}
 </style>
