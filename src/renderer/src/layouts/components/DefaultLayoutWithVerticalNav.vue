@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import NavItems from '@/layouts/components/NavItems.vue'
-import logo from '@images/logo.svg?raw'
+import logo from '@images/logo-b.svg?raw'
 import VerticalNavLayout from '@layouts/components/VerticalNavLayout.vue'
 
 // Components
@@ -65,14 +65,9 @@ import UserProfile from '@/layouts/components/UserProfile.vue'
       >
         <!-- eslint-disable vue/no-v-html -->
         <div
-          class="d-flex"
+          class="d-flex w-60 m-auto"
           v-html="logo"
         />
-        <!-- eslint-enable -->
-
-        <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-          Materio
-        </h1>
       </RouterLink>
 
       <IconBtn

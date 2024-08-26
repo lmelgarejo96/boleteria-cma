@@ -185,4 +185,14 @@ const handleNavScroll = (evt: Event) => {
   width: 150px;
   justify-content: center;
 }
+.w-60{
+  width: 110px;
+  justify-content: center;
+}
+.mr-0{
+  margin-right: 0 !important;
+}
+.m-auto{
+  margin: auto !important;
+}
 </style>

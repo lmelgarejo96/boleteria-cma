@@ -16,7 +16,7 @@ export const routes = [
         component: () => import('@/pages/account-settings.vue'),
       },
 
-
+      // VENTAS
       {
         path: '/ventas/apertura',
         component: () => import('@/pages/ventas/apertura.vue'),
@@ -30,8 +30,11 @@ export const routes = [
         path: '/ventas/vender',
         component: () => import('@/pages/ventas/vender.vue'),
       },
-
-
+      //ADMINISTRACIÓN
+      //TAREAS
+      //REPORTES
+      //FACTURACION ELECTRONICA
+      //CONTABILIDAD
       {
         path: 'typography',
         component: () => import('@/pages/typography.vue'),
