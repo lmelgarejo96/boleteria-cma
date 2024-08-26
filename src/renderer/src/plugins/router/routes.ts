@@ -15,6 +15,23 @@ export const routes = [
         path: 'account-settings',
         component: () => import('@/pages/account-settings.vue'),
       },
+
+
+      {
+        path: '/ventas/apertura',
+        component: () => import('@/pages/ventas/apertura.vue'),
+      },
+      {
+        path: '/ventas/cierre-boleteria',
+        component: () => import('@/pages/ventas/cierre-boleteria.vue'),
+      },
+
+      {
+        path: '/ventas/vender',
+        component: () => import('@/pages/ventas/vender.vue'),
+      },
+
+
       {
         path: 'typography',
         component: () => import('@/pages/typography.vue'),
@@ -27,6 +44,8 @@ export const routes = [
         path: 'cards',
         component: () => import('@/pages/cards.vue'),
       },
+
+
       {
         path: 'tables',
         component: () => import('@/pages/tables.vue'),

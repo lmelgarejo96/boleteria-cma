@@ -2,7 +2,7 @@
 import type { Component } from 'vue'
 import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
 import { useDisplay } from 'vuetify'
-import logo from '@images/logo.svg?raw'
+import logo from '@images/logo-b.svg?raw'
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
@@ -62,13 +62,9 @@ const handleNavScroll = (evt: Event) => {
           class="app-logo app-title-wrapper"
         >
           <div
-            class="d-flex"
+            class="d-flex w-80"
             v-html="logo"
           />
-
-          <h1 class="font-weight-medium leading-normal text-xl text-uppercase">
-            Materio
-          </h1>
         </RouterLink>
       </slot>
     </div>
@@ -184,5 +180,9 @@ const handleNavScroll = (evt: Event) => {
 
     transition: transform 0.25s ease-in-out;
   }
+}
+.w-80{
+  width: 150px;
+  justify-content: center;
 }
 </style>

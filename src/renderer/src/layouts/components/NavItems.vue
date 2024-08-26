@@ -107,7 +107,33 @@ import VerticalNavLink from '@layouts/components/VerticalNavLink.vue'
   <!-- 👉 Apps & Pages -->
   <VerticalNavSectionTitle
     :item="{
-      heading: 'Apps & Pages',
+      heading: 'Ventas',
+    }"
+  />
+  <VerticalNavLink
+    :item="{
+      title: 'Apertura',
+      icon: 'ri-currency-line',
+      to: '/ventas/apertura',
+    }"
+  />
+  <VerticalNavLink
+    :item="{
+      title: 'Cierre de boleteria',
+      icon: 'ri-currency-fill',
+      to: '/ventas/cierre-boleteria',
+    }"
+  />
+  <VerticalNavLink
+    :item="{
+      title: 'Vender',
+      icon: 'ri-cash-line',
+      to: '/ventas/vender',
+    }"
+  />
+  <VerticalNavSectionTitle
+    :item="{
+      heading: 'Ventas',
     }"
   />
   <VerticalNavLink
