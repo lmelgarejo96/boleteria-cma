@@ -32,7 +32,7 @@ const distrito = ['San Martin de Porres', 'Item 2', 'Item 3', 'Item 4'] as const
         </VCard>
       </VCol>
       <!-- CARD IZQUIERDO -->
-      <VCol cols="12" md="6">
+      <VCol cols="12" md="7">
         <VCard title="" class="text-uppercase">
           <VCardText>
             <TableVenderDetail />
@@ -40,7 +40,7 @@ const distrito = ['San Martin de Porres', 'Item 2', 'Item 3', 'Item 4'] as const
         </VCard>
       </VCol>
       <!-- CARD DERECHO -->
-      <VCol cols="12" md="6">
+      <VCol cols="12" md="5">
         <VCard title="" class="text-uppercase">
           <div class="pl-3 pb-5 d-flex justify-center items-center ga-3">
             <p class="pl-20 m-0">
@@ -87,7 +87,7 @@ const distrito = ['San Martin de Porres', 'Item 2', 'Item 3', 'Item 4'] as const
                 <VSelect v-model="select1" :items="departamento" placeholder="Seleciona un departtamento"
                   label="DEPARTAMENTO" name="select" require />
               </VCol>
-              <VCol cols="12" md="4">
+              <VCol cols="12" md="3">
                 <VSelect v-model="select2" :items="provincia" placeholder="Seleciona un provincia" label="PROVINCIA"
                   name="select" require />
               </VCol>
@@ -95,7 +95,7 @@ const distrito = ['San Martin de Porres', 'Item 2', 'Item 3', 'Item 4'] as const
                 <VSelect v-model="select3" :items="distrito" placeholder="Seleciona un distrito" label="DISTRITO"
                   name="select" require />
               </VCol>
-              <VCol cols="12" md="1">
+              <VCol cols="12" md="2">
                 <VBtn color="secondary" variant="outlined" type="reset">
                   <i class="ri-add-line"></i>
                 </VBtn>

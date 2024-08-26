@@ -50,7 +50,7 @@ const handleDelete = (item: Sale) => {
   <VTable>
     <thead>
       <tr>
-        <th class="text-uppercase">Imagen</th>
+        <th class="text-uppercase"></th>
         <th class="text-uppercase text-center">Concepto</th>
         <th class="text-uppercase text-center">Precio</th>
         <th class="text-uppercase text-center">N° de entradas</th>
@@ -62,7 +62,7 @@ const handleDelete = (item: Sale) => {
     <tbody>
       <tr v-for="item in sales" :key="item.sale">
         <td class="text-center">
-          <img :src="getImageByConcepto(item.concepto)" :alt="item.concepto" :style="{ width: item.tamaño + 'px', height: item.tamaño + 'px' }" />
+          <img :src="getImageByConcepto(item.concepto)" :alt="item.concepto" :style="{ height: item.tamaño + 'px' }" />
         </td>
         <td class="text-center">{{ item.concepto }}</td>
         <td class="text-center">{{ item.precio }}</td>
