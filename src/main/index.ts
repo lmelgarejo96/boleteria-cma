@@ -4,6 +4,8 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {
+  const isDev = process.env.NODE_ENV === 'development'
+  console.log({ isDev }, process.env.NODE_ENV);
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 900,
@@ -16,6 +18,12 @@ function createWindow(): void {
       sandbox: false
     }
   })
+
+  mainWindow.maximize()
+
+  if (isDev) {
+    mainWindow.webContents.openDevTools()
+  }
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()

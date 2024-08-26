@@ -4,14 +4,46 @@
     "src/renderer/src/env.d.ts",
     "src/renderer/src/**/*",
     "src/renderer/src/**/*.vue",
-    "src/preload/*.d.ts"
+    "src/preload/*.d.ts",
+    "src/renderer/auto-imports.d.ts",
+    "src/renderer/components.d.ts",
   ],
   "compilerOptions": {
     "composite": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "jsxFragmentFactory": "Fragment",
+    "module": "ESNext",
     "baseUrl": ".",
     "paths": {
+      "@/*": [
+        "./src/renderer/src/*"
+      ],
       "@renderer/*": [
         "src/renderer/src/*"
+      ],
+      "@layouts/*": [
+        "./src/renderer/src/@layouts/*"
+      ],
+      "@layouts": [
+        "src/renderer/src/@layouts"
+      ],
+      "@core/*": [
+        "src/renderer/src/@core/*"
+      ],
+      "@core": [
+        "src/renderer/src/@core"
+      ],
+      "@images/*": [
+        "./src/renderer/src/assets/images/*"
+      ],
+      "@styles/*": [
+        "./src/renderer/src/styles/*"
       ]
     }
   }
