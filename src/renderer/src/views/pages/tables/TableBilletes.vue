@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { ref, watch, computed } from 'vue';
+import bill10 from '@/assets/images/billetes/10.png';
+import bill20 from '@/assets/images/billetes/20.png';
+import bill50 from '@/assets/images/billetes/50.png';
+import bill100 from '@/assets/images/billetes/100.png';
 
 const bills = [
-  { value: 10, quantity: ref<number | null>(null), amount: ref<number>(0) },
-  { value: 20, quantity: ref<number | null>(null), amount: ref<number>(0) },
-  { value: 50, quantity: ref<number | null>(null), amount: ref<number>(0) },
-  { value: 100, quantity: ref<number | null>(null), amount: ref<number>(0) }
+  { value: 10, quantity: ref<number | null>(null), amount: ref<number>(0), image: bill10 },
+  { value: 20, quantity: ref<number | null>(null), amount: ref<number>(0), image: bill20 },
+  { value: 50, quantity: ref<number | null>(null), amount: ref<number>(0), image: bill50 },
+  { value: 100, quantity: ref<number | null>(null), amount: ref<number>(0), image: bill100 }
 ];
 
 bills.forEach(bill => {
@@ -18,7 +22,6 @@ bills.forEach(bill => {
 const totalAmount = computed(() =>
   bills.reduce((sum, bill) => sum + bill.amount.value, 0)
 );
-
 </script>
 
 <template>
@@ -26,14 +29,14 @@ const totalAmount = computed(() =>
     <thead>
       <tr>
         <th class="text-uppercase"></th>
-        <th class="text-uppercase text-center">cantidad</th>
-        <th class="text-uppercase text-center">monto (S/.)</th>
+        <th class="text-uppercase text-center">Cantidad</th>
+        <th class="text-uppercase text-center">Monto (S/.)</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="(bill, index) in bills" :key="index">
         <td>
-          <img :src="`@images/billetes/${bill.value}.png`" :alt="`imagen referencial de billete de ${bill.value}`">
+          <img :src="bill.image" :alt="`Imagen referencial de billete de ${bill.value}`" />
         </td>
         <td class="text-center">
           <VTextField
@@ -54,7 +57,7 @@ const totalAmount = computed(() =>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="2" class="text-uppercase">total de billetes:</td>
+        <td colspan="2" class="text-uppercase">Total de billetes:</td>
         <td class="text-center">
           <VTextField
             :model-value="totalAmount"
