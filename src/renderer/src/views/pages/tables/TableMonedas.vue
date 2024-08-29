@@ -7,13 +7,6 @@ import coin100 from '@/assets/images/monedas/1.00.png';
 import coin200 from '@/assets/images/monedas/2.00.png';
 import coin500 from '@/assets/images/monedas/5.00.png';
 
-const props = defineProps({
-  initialTotalQuantity: {
-    type: Number,
-    default: 0,
-  }
-});
-
 const emit = defineEmits(['update:totalQuantity']);
 
 const coins = [
