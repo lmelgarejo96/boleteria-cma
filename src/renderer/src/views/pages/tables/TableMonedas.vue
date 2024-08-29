@@ -7,6 +7,15 @@ import coin100 from '@/assets/images/monedas/1.00.png';
 import coin200 from '@/assets/images/monedas/2.00.png';
 import coin500 from '@/assets/images/monedas/5.00.png';
 
+const props = defineProps({
+  initialTotalQuantity: {
+    type: Number,
+    default: 0,
+  }
+});
+
+const emit = defineEmits(['update:totalQuantity']);
+
 const coins = [
   { value: 0.10, quantity: ref<number | null>(null), amount: ref<number>(0), image: coin010 },
   { value: 0.20, quantity: ref<number | null>(null), amount: ref<number>(0), image: coin020 },
@@ -23,9 +32,13 @@ coins.forEach(coin => {
 });
 
 // Calculamos el total de todas las monedas
-const totalAmount = computed(() =>
+const totalQuantity = computed(() =>
   coins.reduce((sum, coin) => sum + coin.amount.value, 0)
 );
+
+watch(totalQuantity, (newTotal) => {
+  emit('update:totalQuantity', newTotal);
+});
 </script>
 
 <template>
@@ -64,7 +77,7 @@ const totalAmount = computed(() =>
         <td colspan="2" class="text-uppercase">Total de monedas:</td>
         <td class="text-center">
           <VTextField
-            :model-value="totalAmount"
+            :model-value="totalQuantity"
             type="number"
             class="text-end"
             disabled

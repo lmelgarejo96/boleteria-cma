@@ -5,6 +5,15 @@ import bill20 from '@/assets/images/billetes/20.png';
 import bill50 from '@/assets/images/billetes/50.png';
 import bill100 from '@/assets/images/billetes/100.png';
 
+const props = defineProps({
+  initialTotalAmount: {
+    type: Number,
+    default: 0,
+  }
+});
+
+const emit = defineEmits(['update:totalAmount']);
+
 const bills = [
   { value: 10, quantity: ref<number | null>(null), amount: ref<number>(0), image: bill10 },
   { value: 20, quantity: ref<number | null>(null), amount: ref<number>(0), image: bill20 },
@@ -22,6 +31,11 @@ bills.forEach(bill => {
 const totalAmount = computed(() =>
   bills.reduce((sum, bill) => sum + bill.amount.value, 0)
 );
+
+watch(totalAmount, (newTotal) => {
+  emit('update:totalAmount', newTotal);
+});
+
 </script>
 
 <template>
