@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const inlineRadio = ref('radio-1')
-import DemoFormLayoutHorizontalForm from '@/views/pages/form-layouts/DemoFormLayoutHorizontalForm.vue'
 import TableVenderDetail from '@/views/pages/tables/TableVenderDetail.vue'
 const cliente = ref('')
 const direccion = ref('')

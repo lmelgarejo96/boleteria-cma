@@ -102,7 +102,7 @@ const isPasswordVisible = ref(false)
                 class="text-uppercase btnLogin"
                 block
                 type="submit"
-                to="/"
+                to="/dashboard"
               >
                 continuar
               </VBtn>

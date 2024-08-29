@@ -1,6 +1,6 @@
 import Dashboard from '@/pages/dashboard.vue'
 export const routes = [
-  { path: '/', redirect: '/dashboard' },
+  { path: '/', redirect: '/login' },
   {
     path: '/',
     component: () => import('@/layouts/default.vue'),
