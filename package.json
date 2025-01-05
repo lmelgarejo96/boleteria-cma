@@ -23,7 +23,9 @@
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
     "@electron-toolkit/utils": "^3.0.0",
-    "electron-updater": "^6.1.7"
+    "axios": "^1.7.9",
+    "electron-updater": "^6.1.7",
+    "moment-timezone": "^0.5.46"
   },
   "devDependencies": {
     "@antfu/eslint-config-vue": "^0.43.1",

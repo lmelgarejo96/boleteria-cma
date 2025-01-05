@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import { defineConfig, externalizeDepsPlugin, bytecodePlugin } from 'electron-vite'
+import { defineConfig, bytecodePlugin } from 'electron-vite'
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath } from 'node:url'
 import AutoImport from 'unplugin-auto-import/vite'

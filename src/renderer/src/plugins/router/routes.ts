@@ -1,33 +1,32 @@
-import Dashboard from '@/pages/dashboard.vue'
 export const routes = [
   { path: '/', redirect: '/login' },
   {
     path: '/',
     component: () => import('@/layouts/default.vue'),
     children: [
-      {
-        path: 'dashboard',
-        name: "Dashboard",
-        component: Dashboard
-        // component: () => import('@/pages/dashboard.vue'),
-      },
+      // Mi Perfil
       {
         path: 'account-settings',
         component: () => import('@/pages/account-settings.vue'),
       },
-
+      // Home
+      {
+        path: 'home',
+        name: "Home",
+        component: () => import('@/pages/home.vue'),
+      },
       // VENTAS
       {
-        path: '/ventas/apertura',
+        path: 'ventas/apertura',
         component: () => import('@/pages/ventas/apertura.vue'),
       },
       {
-        path: '/ventas/cierre-boleteria',
+        path: 'ventas/cierre-boleteria',
         component: () => import('@/pages/ventas/cierre-boleteria.vue'),
       },
 
       {
-        path: '/ventas/vender',
+        path: 'ventas/vender',
         component: () => import('@/pages/ventas/vender.vue'),
       },
       //ADMINISTRACIÓN
@@ -35,7 +34,7 @@ export const routes = [
       //REPORTES
       //FACTURACION ELECTRONICA
       //CONTABILIDAD
-      {
+      /* {
         path: 'typography',
         component: () => import('@/pages/typography.vue'),
       },
@@ -56,7 +55,7 @@ export const routes = [
       {
         path: 'form-layouts',
         component: () => import('@/pages/form-layouts.vue'),
-      },
+      }, */
     ],
   },
   {
