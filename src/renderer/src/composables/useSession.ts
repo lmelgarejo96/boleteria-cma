@@ -8,11 +8,17 @@ const assignSessionKey = 'asignacion'
 
 export const useSession = () => {
   const sessionStore = useSessionStore()
-  const { asignacion, usuario } = storeToRefs(sessionStore)
+  const { asignacion, usuario, numeroIp } = storeToRefs(sessionStore)
 
-  const setSession = (usuario: UsuarioLogin, asignacion?: AsignacionUsuario) => {
-    localStorage.setItem(userSessionKey, JSON.stringify(usuario))
-    asignacion && localStorage.setItem(assignSessionKey, JSON.stringify(asignacion))
+  const setNumeroIp = (ip: string) => {
+    numeroIp.value = ip
+  }
+
+  const setSession = (datosUsuario: UsuarioLogin, datosAsignacion?: AsignacionUsuario) => {
+    localStorage.setItem(userSessionKey, JSON.stringify(datosUsuario))
+    usuario.value = datosUsuario
+    asignacion && localStorage.setItem(assignSessionKey, JSON.stringify(datosAsignacion))
+    datosAsignacion && (asignacion.value = datosAsignacion)
   }
 
   const getSession = () => {
@@ -29,6 +35,10 @@ export const useSession = () => {
     }
   }
 
+  const getNumeroIp = () => {
+    return numeroIp.value
+  }
+
   const removeSession = () => {
     localStorage.removeItem(userSessionKey)
     localStorage.removeItem(assignSessionKey)
@@ -43,9 +53,12 @@ export const useSession = () => {
   return {
     usuario,
     asignacion,
+    numeroIp,
     setSession,
     getSession,
     removeSession,
-    loadSession
+    loadSession,
+    setNumeroIp,
+    getNumeroIp
   }
 }

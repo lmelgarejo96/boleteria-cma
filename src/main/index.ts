@@ -2,6 +2,7 @@ import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
+import { networkInterfaces } from 'os';
 
 function createWindow(): void {
   const isDev = process.env.NODE_ENV === 'development'
@@ -27,6 +28,8 @@ function createWindow(): void {
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+    // Send Event to renderer
+    // mainWindow.webContents.send('local-ip', getLocalIP());
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -80,3 +83,24 @@ app.on('window-all-closed', () => {
 
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
+function getLocalIP() {
+  try {
+    const nets = networkInterfaces();
+    const results = Object.create(null);
+    for (const name of Object.keys(nets)) {
+      for (const net of nets?.[name as keyof typeof nets] || []) {
+        // skip over non-ipv4 and internal (i.e. 127.0.0.1) addresses
+        if (net.family === "IPv4" && !net.internal) {
+          if (!results[name]) {
+            results[name] = [];
+          }
+
+          results[name].push(net.address);
+        }
+      }
+    }
+    return results["Ethernet"][0];
+  } catch (err) {
+    return "";
+  }
+}

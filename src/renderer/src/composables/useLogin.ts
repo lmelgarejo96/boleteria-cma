@@ -49,7 +49,7 @@ export const useLogin = () => {
 
   const logout = () => {
     removeSession()
-    router.push('/login')
+    router.push({ name: 'Login' })
   }
 
   return {

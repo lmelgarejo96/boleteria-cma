@@ -7,7 +7,9 @@ import authV1Tree2 from '@images/pages/auth-v1-tree-2.png'
 import authV1Tree from '@images/pages/auth-v1-tree.png'
 import { useLogin } from '@/composables/useLogin'
 import { VCardText } from 'vuetify/lib/components/index.mjs'
+import { useSession } from '@/composables/useSession'
 
+const { numeroIp } = useSession()
 const { signInData, signInError, loading, login } = useLogin()
 
 const vuetifyTheme = useTheme()
@@ -31,8 +33,10 @@ const authThemeMask = computed(() => {
 
       <VCardText class="pt-2">
         <h4 class="text-h4 mb-1 text-center">Sistema de Boleteria</h4>
-        <p class="mb-0 text-center">Boleteria no registrada</p>
-        <p class="mb-0 text-center">IP: <span>168.192.64.3</span></p>
+        <!-- <p class="mb-0 text-center">Boleteria no registrada</p> -->
+        <p class="mb-0 text-center">
+          IP: <span>{{ numeroIp }}</span>
+        </p>
       </VCardText>
 
       <VCardText>

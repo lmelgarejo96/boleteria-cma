@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import homeBg from '@/assets/images/home.png'
+import { useSession } from '@/composables/useSession';
+
+const { usuario } = useSession()
 </script>
 <template>
   <div class="background-container">
@@ -7,7 +10,7 @@ import homeBg from '@/assets/images/home.png'
       <h4 class="portal-title">Sistema Global de Tesorería</h4>
       <img :src="homeBg" alt="Home" class="background-image" draggable="false" />
       <div class="application__content">
-        <div class="application__title"><h4>Bienvenido Luis</h4></div>
+        <div class="application__title"><h4>Bienvenido {{ usuario?.USUUsuario?.split(" ")?.[0] ?? '' }}</h4></div>
         <div class="application__description">
           <p>
             Este sistema centraliza todo el flujo de venta de boletos del Circuito Mágico del Agua. 
