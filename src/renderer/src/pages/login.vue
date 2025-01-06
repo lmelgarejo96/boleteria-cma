@@ -8,14 +8,24 @@ import authV1Tree from '@images/pages/auth-v1-tree.png'
 import { useLogin } from '@/composables/useLogin'
 import { VCardText } from 'vuetify/lib/components/index.mjs'
 import { useSession } from '@/composables/useSession'
+import { useRoute, useRouter } from 'vue-router'
 
 const { numeroIp } = useSession()
 const { signInData, signInError, loading, login } = useLogin()
 
 const vuetifyTheme = useTheme()
+const route = useRoute()
+const router = useRouter()
 
 const authThemeMask = computed(() => {
   return vuetifyTheme.global.name.value === 'light' ? authV1MaskLight : authV1MaskDark
+})
+
+onBeforeMount(() => {
+  if (route.query?.error) {
+    signInError.value.message = route.query?.error as string
+  }
+  router.replace({ query: {} })
 })
 </script>
 

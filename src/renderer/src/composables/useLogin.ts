@@ -1,4 +1,4 @@
-import { assignService } from '@/services/assign.service'
+import { assignService } from '@/services/asignacion.service'
 import { authService } from '@/services/auth.service'
 import { getCurrentDate } from '@/utils/date'
 import { useRouter } from 'vue-router'
@@ -26,7 +26,7 @@ export const useLogin = () => {
 
       if (usuario.USUUsuId) {
         loading.value = true
-        const assignment = await assignService.getTicketOfficeAssignments({
+        const assignment = await assignService.getAsignacionBoleteria({
           fecha: getCurrentDate('YYYY-MM-DD'),
           usuarioId: usuario.USUUsuId
         })

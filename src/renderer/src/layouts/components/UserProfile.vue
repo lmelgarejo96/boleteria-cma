@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import avatar1 from '@images/avatars/avatar-1.png'
 import { useLogin } from '@/composables/useLogin'
+import { useSession } from '@/composables/useSession';
 
 const { logout } = useLogin()
+const { usuario } = useSession()
 </script>
 
 <template>
@@ -25,8 +27,8 @@ const { logout } = useLogin()
               </VListItemAction>
             </template>
 
-            <VListItemTitle class="font-weight-semibold"> John Doe </VListItemTitle>
-            <VListItemSubtitle>Admin</VListItemSubtitle>
+            <VListItemTitle class="font-weight-semibold"> {{ usuario?.USUUsuario }} </VListItemTitle>
+            <VListItemSubtitle>{{ usuario?.PERDescripcion }}</VListItemSubtitle>
           </VListItem>
           <VDivider class="my-2" />
 

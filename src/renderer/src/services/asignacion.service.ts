@@ -1,15 +1,15 @@
 import { apiSgt } from '@/api/sgt'
 import { AsignacionUsuario } from '@/models/AsignacionUsuario'
 
-interface IGetTicketOfficeAssignmentsParams {
+interface IGetAsignacionBoleteriaParams {
   fecha: string
   usuarioId?: number
   puntoVentaId?: number
   boleteriaId?: number
 }
 
-export const getTicketOfficeAssignments = async (
-  params: IGetTicketOfficeAssignmentsParams
+export const getAsignacionBoleteria = async (
+  params: IGetAsignacionBoleteriaParams
 ): Promise<AsignacionUsuario> => {
   try {
     const endpoint = '/asignacionesboleteria'
@@ -23,5 +23,5 @@ export const getTicketOfficeAssignments = async (
 }
 
 export const assignService = {
-  getTicketOfficeAssignments
+  getAsignacionBoleteria
 }
